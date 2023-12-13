@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 enum MenuChoice
 {
     Store = 1,
@@ -252,7 +254,7 @@ class ASEANPhonebook
         do
         {
             Console.WriteLine("\nSelect a Country: ");
-            Console.WriteLine("[1] Philippines [2] Thailand [3] Singapore [4] Indonesia [5] Malaysia [6] All [0] No More");
+            Console.WriteLine("[1] Philippines \n[2] Thailand \n[3] Singapore \n[4] Indonesia \n[5] Malaysia \n[6] All \n[0] No More");
 
             Console.Write("Enter the Country(Number): ");
             int choice = int.Parse(Console.ReadLine());
