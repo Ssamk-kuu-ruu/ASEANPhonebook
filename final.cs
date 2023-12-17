@@ -143,9 +143,13 @@ class ASEANPhonebook
         int countryCode = int.Parse(Console.ReadLine());
         Console.Write("Enter area code: ");
         int areaCode = int.Parse(Console.ReadLine());
+        int phoneNumber;
         Console.Write("Enter number: ");
-        int number = int.Parse(Console.ReadLine());
-
+        while (!int.TryParse(Console.ReadLine(), out phoneNumber) || phoneNumber < 0 || phoneNumber > int.MaxValue)
+        {
+            Console.WriteLine($"Invalid input. Please enter a valid integer between 0 and {int.MaxValue} for the phone number.");
+            Console.Write("Enter number: ");
+        }
         phonebook.Add(new ASEANStudent //set
         {
             StudentNumber = studentNumber,
@@ -155,7 +159,7 @@ class ASEANPhonebook
             Gender = gender,
             CountryCode = countryCode,
             AreaCode = areaCode,
-            PhoneNumber = number,
+            PhoneNumber = phoneNumber,
         });
 
         Console.WriteLine("Entry stored successfully.");
